@@ -1,0 +1,40 @@
+{% set pageClass = pageClass ?? '' %}
+{% set pageTheme = pageTheme ?? 'light' %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  {% block head %}
+  {% include "_includes/head" %}
+  {% endblock %}
+</head>
+
+<body>
+
+  <a href="#content" class="skip-to-content" tabindex="1">Skip to content</a>
+
+  {% include "_includes/svgs" %}
+
+  <div class="page {{ pageClass }} page--{{ pageTheme }}">
+
+    {% block nav %}
+    {% include "_components/nav" %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% include "_components/footer" %}
+    {% endblock %}
+
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/static/main.min.js"></script>
+
+</body>
+
+</html>
